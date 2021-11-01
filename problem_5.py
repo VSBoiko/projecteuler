@@ -6,16 +6,22 @@
 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?.'''
 
-num = 0
-is_find = False
-while not is_find:
-    num += 20
-    print(num)
-    is_find = True
-    for i in range(20, 0, -1):
-        if num % i != 0:
-            is_find = False
-            break
+
+def divided_by_each(div_from = 1, div_to = 10):
+    num = 0
+    list_divided = range(div_from, div_to+1)
+    is_find = False
+    while not is_find:
+        num += list_divided[-1] * list_divided[-2]
+        is_find = True
+        for i in list_divided[::-1]:
+            if num % i != 0:
+                is_find = False
+                break
+    return num
+
    
    
-print("answer", num)     
+print("answer", divided_by_each(1, 20))
+
+# 232792560
