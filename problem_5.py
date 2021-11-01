@@ -35,4 +35,4 @@ def divided_by_each(div_from = 1, div_to = 10):
     return num
 
    
-print("answer", divided_by_each(1, 15))
+print("answer", divided_by_each(1, 20))
